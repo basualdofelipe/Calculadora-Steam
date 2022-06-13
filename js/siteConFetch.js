@@ -87,10 +87,7 @@ function appendear(e,imagen){
             let imagen = juego.header_image;
             let nombre = juego.name;
             let precio = juego.price_overview.final/100;
-            console.log(
-                `Nombre: ${nombre}\nPrecio: $${precio}`
-                )
-                mostarar(nombre,precio,imagen)
+            mostarar(nombre,precio,imagen)
                 
             });
     })
