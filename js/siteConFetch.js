@@ -35,6 +35,7 @@ class Juego{
     }
 }
 
+// Generamos el append para agregar la lista al DOM
 function appendear(e,imagen){
     
 
@@ -76,6 +77,7 @@ function appendear(e,imagen){
     datos.append(total)
 }
 
+// Fetch para traer los datos del JSON donde están cargados los juegos
  fetch("../js/juegos.JSON")
     .then(res => res.json())
     .then(obj => {
@@ -94,7 +96,7 @@ function appendear(e,imagen){
     })
 
     function mostarar(juego,precio,imagen){
-        //cargamos el nuevo juego al método Juegos
+    //cargamos el nuevo juego al método Juegos
     let newgame = new Juego(juego,precio)
 
     //hacemos un nuevo objeto con los precios

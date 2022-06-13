@@ -33,11 +33,11 @@ class Juego{
     }
 }
 
-
-localStorage.getItem("listaStorage") != null ?
-JSON.parse(localStorage.getItem("listaStorage")).forEach(e => {
-    mostrar(e)
-}): console.log("tutubem")
+// Revisar si ya hay juegos cargados al storage
+localStorage.getItem("listaStorage") != null ? 
+JSON.parse(localStorage.getItem("listaStorage"))
+.forEach(e => mostrar(e))
+:null
 
 function cargarJuego(juego, precio){
 
@@ -80,22 +80,24 @@ function cargarJuego(juego, precio){
     mostrar(newgame.nombre)
 }
 
-// cargarJuego("Mario Kart",1500)
-// cargarJuego("Super Smash",1250)
-// cargarJuego("Donkey Kong",900)
-// cargarJuego("Kirby",1360)
-// cargarJuego("Mario Party",999.58)
-// cargarJuego("Bomber Man",1300)
+// cargarJuego("Stardew Valley",999.58)
+// cargarJuego("Mortal Kombat",1500)
+// cargarJuego("KBZ",1250)
+// cargarJuego("Mount And Blade",900)
+// cargarJuego("Sniper Elite",1360)
+// cargarJuego("Counter Strike",1300)
 
-//DOMinating the website
+
 header.innerText = "Bienvenido a la calculadora de juegos de Steam"
 
+
+// Creamos una función que agrega el juego nuevo con los impuestos al DOM
 function mostrar(juego){
     let e = JSON.parse(localStorage.getItem(juego))
     appendear(e)
 }
 
-
+// Generamos el append para la función que agrega al DOM
 function appendear(e){
     let nombre= document.createElement("li");
     nombre.className = e.nombre;
