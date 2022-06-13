@@ -80,12 +80,17 @@ function cargarJuego(juego, precio){
     mostrar(newgame.nombre)
 }
 
-// cargarJuego("Stardew Valley",999.58)
-// cargarJuego("Mortal Kombat",1500)
-// cargarJuego("KBZ",1250)
-// cargarJuego("Mount And Blade",900)
-// cargarJuego("Sniper Elite",1360)
-// cargarJuego("Counter Strike",1300)
+
+// Cargar juegos ya prearmados para probar
+function cargarPreArmados(){
+
+    cargarJuego("Stardew Valley",999.58)
+    cargarJuego("Mortal Kombat",1500)
+    cargarJuego("KBZ",1250)
+    cargarJuego("Mount And Blade",900)
+    cargarJuego("Sniper Elite",1360)
+    cargarJuego("Counter Strike",1300)
+}
 
 
 header.innerText = "Bienvenido a la calculadora de juegos de Steam"
