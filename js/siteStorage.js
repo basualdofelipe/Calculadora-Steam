@@ -139,11 +139,3 @@ limpiar.addEventListener("click",()=>{
     localStorage.clear()
     lista.innerHTML = ""
 })
-
-
- fetch("../js/juegos.JSON")
-    .then(res => res.json())
-    .then(obj => {
-        console.log(obj[2][Object.keys(obj[2])[0]].data.name)
-        console.log(Object.keys(obj[1])[0])
-    })

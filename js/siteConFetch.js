@@ -12,6 +12,8 @@ const precioNuevoJuego = document.querySelector("#nuevoprecio")
 const formulario = document.querySelector("#formulario")
 
 
+header.innerText = "Bienvenido a la calculadora de juegos de Steam"
+
 
 //Constructor de Método de Juegos
 class Juego{
@@ -32,71 +34,6 @@ class Juego{
         return (this.precio * (1 + 0.21 + 0.08 + 0.35)).toFixed(2);
     }
 }
-/*
-
-localStorage.getItem("listaStorage") != null ?
-JSON.parse(localStorage.getItem("listaStorage")).forEach(e => {
-    mostrar(e)
-}): console.log("tutubem")
-
-function cargarJuego(juego, precio){
-
-    //cargamos el nuevo juego al método Juegos
-    let newgame = new Juego(juego,precio)
-
-    //hacemos un nuevo objeto con los precios
-    let newgameCompleto = {
-        nombre: newgame.nombre,
-        precio: newgame.precio,
-        iva: newgame.masIva(),
-        ganancias: newgame.masImpGanancia(),
-        impPais: newgame.masImpPais(),
-        total: newgame.impTotal()
-    }
-
-    //convertimos el objeto en string
-    let stringify = JSON.stringify(newgameCompleto)
-
-    //subimos el string a el storage
-    localStorage.setItem(juego, stringify)
-
-
-    //agregamos o recuperamos el array con la lista de juegos a acceder
-    if(localStorage.getItem("listaStorage") != null )
-        {
-            // si no está vacía le pushea el nuevo juego y actualiza el storage
-            let catalogo = JSON.parse(localStorage.getItem("listaStorage"))
-            catalogo.push(newgame.nombre)
-            let catalogoString = JSON.stringify(catalogo)
-            localStorage.setItem("listaStorage",catalogoString)
-        }
-        else
-        {
-            // si la lista está vacía crea una nueva
-            localStorage.setItem("listaStorage", `["${newgame.nombre}"]`)
-        }
-
-    // con la funcion mostrar agregamos el juego al DOM
-    mostrar(newgame.nombre)
-}
-
-// cargarJuego("Mario Kart",1500)
-// cargarJuego("Super Smash",1250)
-// cargarJuego("Donkey Kong",900)
-// cargarJuego("Kirby",1360)
-// cargarJuego("Mario Party",999.58)
-// cargarJuego("Bomber Man",1300)
-
-//DOMinating the website
-header.innerText = "Bienvenido a la calculadora de juegos de Steam"
-
-function mostrar(juego){
-    let e = JSON.parse(localStorage.getItem(juego))
-    appendear(e)
-}
-*/
-
-
 
 function appendear(e,imagen){
     
@@ -138,19 +75,6 @@ function appendear(e,imagen){
     total.innerText = "total: $" + e.total
     datos.append(total)
 }
-
-
-// Formulario para agregar nuevos juegos
-formulario.addEventListener("submit", e => {
-    e.preventDefault()
-    cargarJuego(tituloNuevoJuego.value, precioNuevoJuego.value)
-})
-
-limpiar.addEventListener("click",()=>{
-    localStorage.clear()
-    lista.innerHTML = ""
-})
-
 
  fetch("../js/juegos.JSON")
     .then(res => res.json())

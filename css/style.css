@@ -3,11 +3,19 @@
     padding: 0;
 }
 
-h1{
-    padding: 1rem;
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1{
+    flex-grow: 1;
 }
 
 
+h1{
+    padding: 1rem;
+}
 
 
 body{
@@ -53,7 +61,12 @@ button{
     color:#A1BA1D;
     background-color: #4C6B22;
     padding: 10px;
+    margin: 15px;
     border-radius: 10px;
+}
+
+button:hover{
+    box-shadow: 0 0 20px #4f9;
 }
 
 .juegos-card{
